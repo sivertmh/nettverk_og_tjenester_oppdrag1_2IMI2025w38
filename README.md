@@ -1,6 +1,6 @@
 # Nettverk og Tjenester - Oppdrag 1, 2IMI uke 38 2025
 
-I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester, med min skole-PC via klassens nettverk. Serveren skal ha statisk IP-adresse, mens skole-pc-ens skal være dynamisk. Dokumentasjon skal legges ut på Github på [https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38](https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38).
+I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester, med min skole-PC via klassens nettverk. Server-Pi-en skal ha statisk IP-adresse, mens skole-pc-ens skal være en dynamisk. Dokumentasjon skal legges ut på Github på [https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38](https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38).
 
 ## IP-adresser og Annen Nettverksinfo
 
@@ -11,11 +11,14 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 **sivertskolepi (Raspberry Pi):**
 
 * statisk IP-addresse: 10.200.14.19
+
+**Nettverket:**
+
 * nettmaske (subnet mask): 255.0.0.0
 * default gateway: 10.0.0.1 
 * DNS: 10.0.0.10 eller 8.8.8.8
 
-**Slik ser min .yaml-configfil ut i /etc/netplan for sivertskolepi:**
+**Slik ser min .yaml-configfil ut i /etc/netplan/ for sivertskolepi:**
 
 ```
 network:
@@ -37,5 +40,50 @@ network:
           password: "IMKuben1337!"
 ```
 
+## Hvordan Jeg Satt Opp Ulike Ting
 
+### Samba 
+
+Først må du installere samba:
+
+``sudo apt install samba``
+
+Så lage en mappe som skal deles og gi den tillatelser til å kunne endres av alle:
+
+```
+sudo mkdir /samba_share
+sudo chmod 777 /samba_share
+```
+
+Åpne konfigurasjonsfilen til Samba med en texteditor (nano blir brukt her):
+
+``sudo nano /etc/samba/smb.conf``
+
+I filen legg til:
+
+```
+[samba_share]
+    comment = Samba Shared Directory
+    path = /samba_share
+    read only = no
+    guest ok = yes
+```
+
+Lag samba-bruker (det kan hende du vil ignorere første linje, hvis du har en bruker laget for deling. Hvis du lager ny kan du bytte ut "smbusr" med ett valgfritt navn.):
+
+```
+sudo useradd smbusr
+sudo smbpasswd -a smbusr
+```
+
+Til slutt: restart service-en:
+
+``sudo systemctl restart smbd nmbd``
+
+Hvis du har ufw som brannmur:
+
+```sudo ufw allow samba
+sudo ufw allow 445```
+
+## Jellyfin
 
