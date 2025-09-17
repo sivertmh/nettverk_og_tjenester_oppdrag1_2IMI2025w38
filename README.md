@@ -1,6 +1,6 @@
 # Nettverk og Tjenester - Oppdrag 1, 2IMI uke 38 2025
 
-I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester, med min skole-PC via klassens nettverk. Server-Pi-en skal ha statisk IP-adresse, mens skole-pc-ens skal være en dynamisk. Dokumentasjon skal legges ut på Github på [https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38](https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38).
+I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester, med min skole-PC via klassens nettverk. Server-Pi-en skal ha statisk IP-adresse, mens skole-pc-ens skal være en dynamisk. Dokumentasjon skal ligge ute på Github her: [https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38](https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38).
 
 ## IP-adresser og Annen Nettverksinfo
 
@@ -12,11 +12,11 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 
 * statisk IP-addresse: 10.200.14.19
 
-**Nettverket:**
+**Nettverket (Kuben.it):**
 
 * nettmaske (subnet mask): 255.0.0.0
 * default gateway: 10.0.0.1 
-* DNS: 10.0.0.10 eller 8.8.8.8
+* DNS: 10.0.0.10, 8.8.8.8 og 1.1.1.1
 
 **Slik ser min .yaml-configfil ut i /etc/netplan/ for sivertskolepi:**
 
@@ -46,7 +46,7 @@ network:
 
 Først må du installere samba:
 
-``sudo apt install samba``
+`sudo apt install samba`
 
 Så lage en mappe som skal deles og gi den tillatelser til å kunne endres av alle:
 
@@ -57,7 +57,7 @@ sudo chmod 777 /samba_share
 
 Åpne konfigurasjonsfilen til Samba med en texteditor (nano blir brukt her):
 
-``sudo nano /etc/samba/smb.conf``
+`sudo nano /etc/samba/smb.conf`
 
 I filen legg til:
 
@@ -76,14 +76,16 @@ sudo useradd smbusr
 sudo smbpasswd -a smbusr
 ```
 
-Til slutt: restart service-en:
+Til slutt, restart service-en:
 
-``sudo systemctl restart smbd nmbd``
+`sudo systemctl restart smbd nmbd`
 
 Hvis du har ufw som brannmur:
 
-```sudo ufw allow samba
-sudo ufw allow 445```
+```
+sudo ufw allow samba
+sudo ufw allow 445
+```
 
 ## Jellyfin
 
