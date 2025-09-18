@@ -18,7 +18,11 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 * default gateway: 10.0.0.1 
 * DNS: 10.0.0.10, 8.8.8.8 og 1.1.1.1
 
-**Slik ser min .yaml-configfil ut i /etc/netplan/ for sivertskolepi (for å få statisk IP-addresse):**
+## Mitt Oppsett av Tjenestene
+
+### Generelt Nettverk
+
+**Min .yaml i /etc/netplan/ for sivertskolepi (for å få statisk IP-addresse):**
 
 ```
 network:
@@ -40,7 +44,12 @@ network:
           password: "IMKuben1337!"
 ```
 
-## Mitt Oppsett av Tjenestene
+Bevis på at en kobling er etablert mellom Pi og Laptop:
+![Ping mellom Pi og Laptop](./media/pingtest_sivertskolepi.png)
+
+For å koble de sammen brukte jeg nmcli:
+
+![Kobling til Kuben.it](./media/connect_to_network2IMI.png)
 
 ### Samba 
 
@@ -91,8 +100,10 @@ sudo ufw allow 445
 
 Fra linux (tjener):
 ![Demo av Samba fra Linux (tjener)](./media/samba_demo.png "Demo av Samba på Linux")
-Fra Windows (skole-pc, klient)
+
+Fra Windows (skole-pc, klient):
 ![Demo av Samba fra Windows 11](./media/samba_demo_windowsClientPOV.png "Demo av Samba på Windows")
+
 
 ### Jellyfin
 
