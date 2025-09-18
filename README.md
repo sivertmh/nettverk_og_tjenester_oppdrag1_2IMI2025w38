@@ -1,6 +1,6 @@
 # Nettverk og Tjenester - Oppdrag 1, 2IMI uke 38 2025
 
-I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester, med min skole-PC via klassens nettverk. Server-Pi-en skal ha statisk IP-adresse, mens skole-pc-ens skal være en dynamisk. Dokumentasjon skal ligge ute på Github her: [https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38](https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38).
+I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester, med min skole-PC via klassens nettverk. Server-Pi-en skal ha statisk IP-adresse, mens skole-pc-ens skal være en dynamisk. Dokumentasjon skal ligge ute på Github [her](https://github.com/sivertmh/nettverk_og_tjenester_oppdrag1_2IMI2025w38).
 
 ## IP-adresser og Annen Nettverksinfo
 
@@ -18,7 +18,7 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 * default gateway: 10.0.0.1 
 * DNS: 10.0.0.10, 8.8.8.8 og 1.1.1.1
 
-**Slik ser min .yaml-configfil ut i /etc/netplan/ for sivertskolepi:**
+**Slik ser min .yaml-configfil ut i /etc/netplan/ for sivertskolepi (for å få statisk IP-addresse):**
 
 ```
 network:
@@ -40,7 +40,7 @@ network:
           password: "IMKuben1337!"
 ```
 
-## Hvordan Jeg Satt Opp Ulike Ting
+## Mitt Oppsett av Tjenestene
 
 ### Samba 
 
@@ -87,5 +87,10 @@ sudo ufw allow samba
 sudo ufw allow 445
 ```
 
-## Jellyfin
+**På bildene under ser du at Samba fungerer som det skal:**
+
+[Demo av Samba fra Linux (tjener)](./media/samba_demo.png "Demo av Samba på Linux")
+[Demo av Samba fra Windows 11](./media/samba_demo_windowsClientPOV.png "Demo av Samba på Windows")
+
+### Jellyfin
 
