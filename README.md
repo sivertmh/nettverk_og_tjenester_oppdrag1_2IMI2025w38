@@ -22,7 +22,7 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 
 ### Generelt Nettverk
 
-**Min .yaml i /etc/netplan/ for sivertskolepi (for å få statisk IP-addresse):**
+**Min oppdrag1_statiskIP.yaml i /etc/netplan/ på sivertskolepi (for å få statisk IP-addresse):**
 
 ```
 network:
@@ -47,7 +47,7 @@ network:
 Bevis på at en kobling er etablert mellom Pi og Laptop:
 ![Ping mellom Pi og Laptop](./media/pingtest_sivertskolepi.png)
 
-For å koble de sammen brukte jeg nmcli:
+For å koble Pi-en på Kuben.it brukte jeg nmcli:
 
 ![Kobling til Kuben.it](./media/connect_to_network2IMI.png)
 
