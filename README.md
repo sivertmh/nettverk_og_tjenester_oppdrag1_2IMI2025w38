@@ -89,7 +89,9 @@ sudo ufw allow 445
 
 **På bildene under ser du at Samba fungerer som det skal:**
 
+Fra linux (tjener):
 ![Demo av Samba fra Linux (tjener)](./media/samba_demo.png "Demo av Samba på Linux")
+Fra Windows (skole-pc, klient)
 ![Demo av Samba fra Windows 11](./media/samba_demo_windowsClientPOV.png "Demo av Samba på Windows")
 
 ### Jellyfin
