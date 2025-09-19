@@ -18,7 +18,7 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 * default gateway: 10.0.0.1 
 * DNS: 10.0.0.10, 8.8.8.8 og 1.1.1.1
 
-## Mitt Oppsett av Tjenestene
+## Mitt Oppsett av Tjenestene og Svar På Andre Oppgaver
 
 ### Generelt Nettverk
 
@@ -64,7 +64,7 @@ Så flyttet jeg en HTML-testfil til Apaches HTML-mappe:
 
 ``sudo mv ~/index.html /var/www/html/``
 
-Nå skal det funke, så jeg sjekket fra min bærbare datamaskin:
+Nå skulle det funke, så jeg sjekket fra min bærbare datamaskin:
 
 ![Demo av Webserver](./media/webserver_apache_demo.png)
 
@@ -123,5 +123,12 @@ Fra Windows (skole-pc, klient):
 ![Demo av Samba fra Windows 11](./media/samba_demo_windowsClientPOV.png "Demo av Samba på Windows")
 
 
-### Jellyfin
+### Python-skript på Pi
 
+Jeg lagde et Python-skript på min bærebare PC og pushet det til Github:
+
+![Demo av Git Push](./media/pythonscript_commit.png)
+
+Så lastet jeg det ned på Pi-en og kjørte skriptet som viste systeminfo:
+
+![Demo av Git Pull og Python-skript](./media/pythonscript_demo.png)
