@@ -51,6 +51,24 @@ For å koble Pi-en på Kuben.it brukte jeg nmcli:
 
 ![Kobling til Kuben.it](./media/connect_to_network2IMI.png)
 
+### Webserver (Apache)
+
+Først måtte jeg installere Apache på Pi-en:
+
+```
+sudo apt update
+sudo apt install apache2
+```
+
+Så flyttet jeg en HTML-testfil til Apaches HTML-mappe:
+
+``sudo mv ~/index.html /var/www/html/``
+
+Nå skal det funke, så jeg sjekket fra min bærbar datamaskin:
+
+![Demo av Webserver](./media/webserver_apache_demo.png)
+
+
 ### Samba 
 
 Først må du installere samba:
