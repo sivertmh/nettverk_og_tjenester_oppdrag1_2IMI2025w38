@@ -18,6 +18,10 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 * default gateway: 10.0.0.1 
 * DNS: 10.0.0.10, 8.8.8.8 og 1.1.1.1
 
+**Hvordan logge inn på Pi med ssh**
+
+``ssh sivertmh@sivertskolepi.local``
+
 ## Mitt Oppsett av Tjenestene og Svar På Andre Oppgaver
 
 ### Generelt Nettverk
