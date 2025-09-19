@@ -18,7 +18,7 @@ I dette oppdraget skal jeg koble en Raspberry Pi, som skal tilby ulike tjenester
 * default gateway: 10.0.0.1 
 * DNS: 10.0.0.10, 8.8.8.8 og 1.1.1.1
 
-**Hvordan logge inn på Pi med ssh**
+**Hvordan logge inn på Pi med ssh:**
 
 ``ssh sivertmh@sivertskolepi.local``
 
@@ -47,6 +47,8 @@ network:
         "Kuben.it":
           password: "IMKuben1337!"
 ```
+
+Jeg måtte kalle denne filen noe som kom alfabetisk før de andre .yaml filene slik at den blir kjørt sist og får "makten". Det var enkelt, siden de andre startet med tall, så jeg kalte den noe med bokstav først, siden tall kommer før bokstaver.
 
 Bevis på at en kobling er etablert mellom Pi og Laptop:
 ![Ping mellom Pi og Laptop](./media/pingtest_sivertskolepi.png)
