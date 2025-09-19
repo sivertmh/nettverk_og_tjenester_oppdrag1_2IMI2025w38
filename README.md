@@ -48,7 +48,7 @@ network:
           password: "IMKuben1337!"
 ```
 
-Jeg måtte kalle denne filen noe som kom alfabetisk før de andre .yaml filene slik at den blir kjørt sist og får "makten". Det var enkelt, siden de andre startet med tall, så jeg kalte den noe med bokstav først, siden tall kommer før bokstaver.
+Jeg måtte kalle denne filen noe som kom alfabetisk etter de andre .yaml filene slik at den blir kjørt sist og får "makten". Det var enkelt, siden de andre startet med tall, så jeg kalte den noe med bokstav først, siden tall kommer før bokstaver.
 
 Bevis på at en kobling er etablert mellom Pi og Laptop:
 ![Ping mellom Pi og Laptop](./media/pingtest_sivertskolepi.png)
