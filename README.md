@@ -64,7 +64,7 @@ Så flyttet jeg en HTML-testfil til Apaches HTML-mappe:
 
 ``sudo mv ~/index.html /var/www/html/``
 
-Nå skal det funke, så jeg sjekket fra min bærbar datamaskin:
+Nå skal det funke, så jeg sjekket fra min bærbare datamaskin:
 
 ![Demo av Webserver](./media/webserver_apache_demo.png)
 
