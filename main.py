@@ -1,8 +1,6 @@
 import platform
 # from datetime import datetime
 
-print("Hallo, verden!:")
-
 print("="*40, "Systeminformasjon", "="*40)
 
 uname = platform.uname()
